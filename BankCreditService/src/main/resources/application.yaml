@@ -1,0 +1,29 @@
+server:
+  port: ${APPLICATION_PORT:8081}
+  tomcat:
+    connection-timeout: 120000
+
+
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration
+
+ibm:
+  mq:
+    queueManager: ${JMS_QUEUE_MANAGER:QM2}
+    channel: ${JMS_CHANNEL:DEV.ADMIN.SVRCONN}
+    connName: ${JMS_CONN_NAME:localhost(1414)}
+    host: ${JMS_HOST:localhost} #указывается отдельно
+    port: ${JMS_PORT:1414}
+    user: ${JMS_USER:admin}
+    password: ${JMS_PASSWORD:passw0rd}
+    ssl-cipher-suite: ${CIPHER_SUITE:TLS_RSA_WITH_AES_128_GCM_SHA256}
+
+
+javax:
+  net:
+    ssl:
+      keyStore: ${SSL_KEYSTORE:D:\JetBrains\Projects\BankApplication\clientkey.jks}
+      keyStorePassword: ${SSL_KEYSTORE_PASSWORD:password}
+      trustStore: ${SSL_TRUSTSTORE:D:\JetBrains\Projects\BankApplication\clientkey.jks}
+      trustStorePassword: ${SSL_TRUSTSTORE_PASSWORD:password}
