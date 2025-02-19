@@ -1,0 +1,5 @@
+org\bank\Main.class
+org\bank\service\impl\TestMq.class
+org\bank\config\JmsConfig.class
+org\bank\controller\TestMqController.class
+org\gpb\config\WebClientConfiguration.class
